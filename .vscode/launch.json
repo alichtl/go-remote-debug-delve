@@ -1,17 +1,28 @@
 {
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach",
+      "type": "go",
+      "request": "attach",
+      "mode": "remote",
+      "debugAdapter": "dlv-dap",
+      "substitutePath": [
         {
-            "name": "Attach",
-            "type": "go",
-            "request": "attach",
-            "mode": "remote",
-            "remotePath": "",
-            "port":2345,
-            "host":"127.0.0.1",
-            "showLog": true,
-            "trace": "log",
-            "logOutput": "rpc"
+          "from": "${userHome}/.asdf/installs/golang/1.24.2",
+          "to": "/usr/local"
+        },
+        {
+          "from": "${workspaceFolder}",
+          "to": "/"
         }
-    ]
+      ],
+      "port": 2345,
+      "host": "127.0.0.1",
+      "showLog": true,
+      "trace": "log",
+      "logOutput": "rpc",
+      "stopOnEntry": true
+    }
+  ]
 }
